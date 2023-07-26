@@ -2,23 +2,16 @@ from alpha_vantage.timeseries import TimeSeries
 
 from matplotlib import pyplot as plt
 
-KEY='S7L9K8TV3GBQIQ7I'
+KEY='******************'
 ts=TimeSeries(key=KEY,)
+nazwa=input("podaj jaki indeks chcesz sprawdzić np(#AAPL S&P500 DAX)")
+data=ts.get_daily(nazwa)
 
-data=ts.get_daily('Nasdaq')
+
 
 info=data[1]
 data=data[0]
 
-szuk='2023-07-25'
-#AAPL S&P500 DAX
-#szuk=input("podaj z jakiej daty wyszukujesz?")
-
-# for x in data.values():
-#     print(x)
-
-# for jed,dwa in data[szuk].items():
-#     print(jed+':'+dwa)
 
 lista_wynikow=[]
 najwiecej=[]
